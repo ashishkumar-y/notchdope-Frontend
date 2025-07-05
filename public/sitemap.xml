@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://notchdope.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/about</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/promotion</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/download</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/contact</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/privacy-policy</loc>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://notchdope.com/terms</loc>
+    <priority>0.50</priority>
+  </url>
+</urlset>
