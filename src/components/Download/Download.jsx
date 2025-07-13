@@ -9,13 +9,20 @@ const Download = () => {
   const [currentQuality, setCurrentQuality] = useState(null);
   const [showCompleted, setShowCompleted] = useState(false);
 
+
+      const BackendApi ="https://notchdope-backend.up.railway.app";
+      // const BackendApi="https://notchdope-backend.onrender.com";
+      // const BackendApi ="http://localhost:6900"
+  
+  
   const getVideoDetails = async (e) => {
     e.preventDefault();
     setVideoInfo(null);
     setLoading(true);
     try {
       const encodedURL = encodeURIComponent(link);
-      const { data } = await axios.get(`http://localhost:6900/api/get-video-info/${encodedURL}`);
+      const { data } = await axios.get(`${BackendApi}/api/get-video-info/${encodedURL}`);
+           // const { data } = await axios.get(`${BackendApi}/api/get-video-info/${encodedURL}`);
       setVideoInfo(data);
     } catch (error) {
       alert("Failed to fetch video info.");
@@ -28,7 +35,8 @@ const Download = () => {
     setShowHoldOn(true);
 
     const encodedURL = encodeURIComponent(link);
-    const downloadURL = `http://localhost:6900/api/download/${encodedURL}/${quality}`;
+        const downloadURL = `${BackendApi}/api/download/${encodedURL}/${quality}`;
+ // const downloadURL = `${BackendApi}/api/download/${encodedURL}/${quality}`;
 
     setTimeout(() => {
       window.location.href = downloadURL;
