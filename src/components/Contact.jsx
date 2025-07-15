@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaExternalLinkAlt, FaLocationArrow, FaMapMarked, FaPhone, FaPhoneSlash, FaSearchLocation } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
+import ContactForm from './ContactForm'
 
 
 const Contact = () => {
@@ -48,6 +49,8 @@ const Contact = () => {
                     </h2>
 
                     <p>Fill in this form or send us an e-mail with your inquiry.</p>
+
+                    <ContactForm/>
 
                 </div>
             </div>

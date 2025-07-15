@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { loginSignup, NavLinks } from './Data/content';
+import { NavLinks } from './Data/content';
 import { MdMenuOpen } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,79 +10,73 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const filteredLinks = NavLinks.filter(
+    link =>
+      link.label.toLowerCase() !== 'terms' &&
+      link.label.toLowerCase() !== 'privacy'
+  );
+
   return (
-    <header className=" mt-4 w-full  flex justify-between items-center py-4 px-4 lg:px-20 z-50">
+    <header className="mt-4 lg:w-[90%] mx-auto flex justify-between items-center py-4 px-4 lg:px-20 z-50 relative backdrop-blur-lg border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-2xl">
       
       {/* Logo */}
       <a
-        href="https://www.instagram.com/"
-        className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-wide text-white"
-        aria-label="Notch-Dope Instagram"
+        href="https://www.instagram.com/notchdope"
+        className="text-3xl lg:text-4xl font-bold tracking-widest text-white drop-shadow-[0_0_5px_#8c52ff]"
+        aria-label="Notchdope Instagram"
       >
-        Notch-Dope
+        Notch<span className="text-[#8c52ff]">Dope</span>
       </a>
 
-      {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center gap-5">
-        {NavLinks.map((item, index) => (
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center gap-6">
+        {filteredLinks.map((item, index) => (
           <a
             key={index}
             href={item.href}
-            className="text-sm font-medium tracking-wide hover:text-[#8c52ff] transition-colors text-white"
+            className="relative text-sm font-semibold text-white hover:text-[#8c52ff] transition-all duration-300 hover:scale-105"
           >
             {item.label}
           </a>
         ))}
       </nav>
 
-      {/* Desktop Login/Signup Buttons */}
-      <div className="hidden md:flex gap-3">
-        {loginSignup.map((item, index) => (
-          <a
-            key={index}
-            href={item.href}
-            className="border border-white py-2 px-6 rounded-xl font-medium hover:bg-white hover:text-black transition-all duration-300"
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-
-      {/* Mobile Menu Button */}
+      {/* Mobile Toggle Button */}
       <button
-        className="md:hidden text-white text-3xl"
+        className="md:hidden text-white text-3xl bg-white/10 p-2 rounded-xl hover:bg-white/20 transition"
         onClick={toggleMobileMenu}
-        aria-label="Toggle menu"
+        aria-label="Toggle mobile menu"
       >
-        <MdMenuOpen />
+        {menuOpen ? <IoClose /> : <MdMenuOpen />}
       </button>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="fixed top-16 left-0 right-0 bottom-0 bg-black/60 backdrop-blur-md z-40 p-6 flex flex-col items-center">
-          <nav className="flex flex-col gap-5">
-            {NavLinks.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="text-lg font-medium text-white hover:text-gray-300 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+      {/* Mobile Menu Overlay */}
+    
 
-            {loginSignup.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="border border-white mt-4 py-2 px-6 rounded-xl font-medium hover:bg-white hover:text-black transition-all duration-300 text-white"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
+
+         <div className={`md:hidden fixed top-0 left-0 w-full h-screen z-[999] transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : '-translate-x-full'} bg-gradient-to-br from-[#0f0f0f] to-[#1e1e1e] backdrop-blur-lg shadow-[0_0_60px_rgba(140,82,255,0.5)] flex flex-col items-center justify-center p-8`}>
+
+        {/* Close Button Top Right */}
+        <button
+          className="absolute top-5 right-5 text-white text-4xl p-2 hover:rotate-90 transition-transform duration-300"
+          onClick={toggleMobileMenu}
+        >
+          <IoClose />
+        </button>
+
+        <nav className="flex flex-col gap-8 items-center">
+          {filteredLinks.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="text-2xl font-bold text-white hover:text-[#8c52ff] tracking-wider transition-all duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 };

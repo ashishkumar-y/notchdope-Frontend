@@ -21,12 +21,12 @@ export const NavLinks = [
     { label: "About", href: "/about", type: "link" },
  
 ]
-export const loginSignup = [
-       { label: "Policy", href: "/privacypolicy", type: "link" },
-   { label: "Terms & Conditions", href: "/terms", type: "link" },
-    // { label: "Sign up", href: "/signup", type: "signupBtn" },
-    // { label: "Log in", href: "/login", type: "loginBtn" },
-]
+// export const loginSignup = [
+//        { label: "Policy", href: "/privacypolicy", type: "link" },
+//    { label: "Terms & Conditions", href: "/terms", type: "link" },
+//     // { label: "Sign up", href: "/signup", type: "signupBtn" },
+//     // { label: "Log in", href: "/login", type: "loginBtn" },
+// ]
 
 export const primaryHero = {
     heading: "Platform For Creativity",
