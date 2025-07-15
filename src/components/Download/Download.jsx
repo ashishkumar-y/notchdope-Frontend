@@ -21,7 +21,7 @@ const Download = () => {
     setLoading(true);
     try {
       const encodedURL = encodeURIComponent(link);
-      const { data } = await axios.get(`${BackendApi}/api/get-video-info/${encodedURL}`);
+      const { data } = await axios.get(`${BackendApi}/api/youtube/get-video-info/${encodedURL}`);
            // const { data } = await axios.get(`${BackendApi}/api/get-video-info/${encodedURL}`);
       setVideoInfo(data);
     } catch (error) {
@@ -35,7 +35,7 @@ const Download = () => {
     setShowHoldOn(true);
 
     const encodedURL = encodeURIComponent(link);
-        const downloadURL = `${BackendApi}/api/download/${encodedURL}/${quality}`;
+        const downloadURL = `${BackendApi}/api/youtube/download/${encodedURL}/${quality}`;
  // const downloadURL = `${BackendApi}/api/download/${encodedURL}/${quality}`;
 
     setTimeout(() => {

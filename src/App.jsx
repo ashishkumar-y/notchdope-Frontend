@@ -8,6 +8,7 @@ import Home from "./components/Home"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import PrivacyPolicy from "./components/PrivacyPolicy"
 import TermsOfUse from "./components/TermsOfUse"
+import InstaToolPage from "./components/instaDownloader/InstaToolPage"
 
 
 export function App() {
@@ -32,10 +33,15 @@ export function App() {
       //   path: '/promotion',
       //   element: <Promotion />
       // },
-       {
+      //  {
+      //   path: '/download',
+      //   element: <Download />
+      // }, 
+         {
         path: '/download',
-        element: <Download />
-      }, {
+        element: <InstaToolPage />
+      }, 
+      {
         path: '/about',
         element: <About />
       },{
@@ -47,12 +53,6 @@ export function App() {
       },{
         path: '/terms',
         element: <TermsOfUse/>
-      }, {
-        path: '/login',
-        // element: <Login />
-      }, {
-        path: '/signup',
-        // element: <Signup />
       },
 
     ]
