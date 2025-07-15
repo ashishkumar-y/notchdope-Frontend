@@ -24,7 +24,7 @@ const InstaDownloader = () => {
         setMediaInfo({
           download: data.mediaUrl,
           is_video: data.is_video,
-          thumbnail: data.thumbnail || '', // fallback
+          thumbnail: data.thumbnail || '', 
         });
       } else {
       alert('Failed to fetch media');
