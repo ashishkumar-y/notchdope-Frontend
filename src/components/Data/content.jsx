@@ -86,7 +86,6 @@ export const servicesHero = [
         label: "Motion Graphic",
         text: "Lyrics Video, Audio Visualizer, Intro Videos"
     },
-
 ]
 
 export const websiteDesignHero = {

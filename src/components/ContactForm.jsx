@@ -113,7 +113,7 @@ const ContactForm = () => {
         <div className="flex flex-col md:col-span-2">
           <label htmlFor="phone" className="mb-2 font-medium">Phone Number</label>
           <div className="flex gap-2">
-            <div className="w-36">
+            {/* <div className="w-36">
               <Select
                 options={countryOptions}
                 value={selectedCode}
@@ -140,7 +140,7 @@ const ContactForm = () => {
                   }),
                 }}
               />
-            </div>
+            </div> */}
             <input
               type="tel"
               id="phone"
