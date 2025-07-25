@@ -37,10 +37,10 @@ export function App() {
       //   path: '/download',
       //   element: <Download />
       // }, 
-         {
-        path: '/download',
-        element: <InstaToolPage />
-      }, 
+      //    {
+      //   path: '/download',
+      //   element: <InstaToolPage />
+      // }, 
       {
         path: '/about',
         element: <About />
