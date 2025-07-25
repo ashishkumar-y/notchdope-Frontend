@@ -16,7 +16,7 @@ export const MainLogo = "Notch-Dope"
 export const NavLinks = [
     { label: "Home", href: "/", type: "link" },
     // { label: "Promotion", href: "/promotion", type: "link" },
-    { label: "Download", href: "/download", type: "link" },
+    // { label: "Download", href: "/download", type: "link" },
     { label: "Contact", href: "/contact", type: "link" },
     { label: "About", href: "/about", type: "link" },
  
